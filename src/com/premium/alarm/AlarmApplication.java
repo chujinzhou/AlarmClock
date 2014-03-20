@@ -105,13 +105,13 @@ public class AlarmApplication extends Application {
         WakeLockManager.init(getApplicationContext(), logger, true);
         AlarmsManager.init(getApplicationContext(), logger);
 
-        ACRA.getErrorReporter().addOnExceptionHandledCommand(new Runnable() {
-            @Override
-            public void run() {
-                ACRA.getErrorReporter().putCustomData("STARTUP_LOG",
-                        StartupLogWriter.getInstance().getMessagesAsString());
-            }
-        });
+        // ACRA.getErrorReporter().addOnExceptionHandledCommand(new Runnable() {
+        // @Override
+        // public void run() {
+        // ACRA.getErrorReporter().putCustomData("STARTUP_LOG",
+        // StartupLogWriter.getInstance().getMessagesAsString());
+        // }
+        // });
 
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
